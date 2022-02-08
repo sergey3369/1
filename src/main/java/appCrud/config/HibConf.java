@@ -15,7 +15,6 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@EnableJpaRepositories("appCrud.repository")
 @EnableTransactionManagement
 public class HibConf {
     @Bean
