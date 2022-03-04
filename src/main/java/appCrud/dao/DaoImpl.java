@@ -26,7 +26,7 @@ public class DaoImpl implements Dao {
     }
 
     @Override
-    public User getUser(int id) {
+    public User getUser(Long id) {
         Query query = entityManager.
                 createQuery("select u from User u where u.id = :id");
         query.setParameter("id", (long) id);
@@ -34,7 +34,7 @@ public class DaoImpl implements Dao {
     }
 
     @Override
-    public void deleteUser(Integer id) {
+    public void deleteUser(Long id) {
         Query query = entityManager.
                 createQuery("delete from User u where u.id = :id");
         query.setParameter("id", (long) id);

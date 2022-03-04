@@ -9,9 +9,9 @@ public interface Dao {
 
     public void saveUser(User user);
 
-    public User getUser(int id);
+    public User getUser(Long id);
 
-    public void deleteUser(Integer id);
+    public void deleteUser(Long id);
 
     void update(User user);
 }

@@ -22,7 +22,7 @@ public class ControllerBase {
     }
 
     @GetMapping("/{id}")
-    String getPage(@PathVariable Integer id, Model model) {
+    String getPage(@PathVariable Long id, Model model) {
         model.addAttribute("user", userService.getUser(id));
         return "user";
     }
@@ -34,10 +34,10 @@ public class ControllerBase {
     }
 
     @GetMapping("/{id}/edit")
-    String getEditPage(@PathVariable Integer id, Model model) {
+    String getEditPage(@PathVariable Long id, Model model) {
         User user = userService.getUser(id);
         model.addAttribute("user", user);
-        userService.deleteUser(Math.toIntExact(user.getId()));
+        userService.deleteUser(user.getId());
         return "edit";
     }
 
@@ -54,7 +54,7 @@ public class ControllerBase {
     }
 
     @DeleteMapping("/{id}")
-    String delete(@PathVariable Integer id) {
+    String delete(@PathVariable Long id) {
         userService.deleteUser(id);
         return "redirect:/";
     }
